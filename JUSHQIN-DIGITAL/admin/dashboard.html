@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Control Center — JUSHQIN OS</title>
+  <link rel="stylesheet" href="../css/variables.css">
+  <link rel="stylesheet" href="../css/global.css">
+  <link rel="stylesheet" href="../css/admin.css">
+  <link rel="stylesheet" href="../css/responsive.css">
+  <script>
+    // Immediate auth guard (frontend demo)
+    if (sessionStorage.getItem('jushqin_admin_session') !== 'authenticated') {
+      window.location.replace('login.html');
+    }
+  </script>
+</head>
+<body class="admin-body">
+  <aside class="admin-sidebar" id="sidebar">
+    <div class="sidebar-brand">
+      <span class="logo-mark">J</span>
+      <span class="brand-text">JUSHQIN OS</span>
+    </div>
+    <nav class="sidebar-nav">
+      <a href="#" class="nav-item active" data-section="overview"><span class="nav-icon">◈</span> Overview</a>
+      <a href="#" class="nav-item" data-section="profile"><span class="nav-icon">◉</span> Profile</a>
+      <a href="#" class="nav-item" data-section="projects"><span class="nav-icon">▣</span> Projects</a>
+      <a href="#" class="nav-item" data-section="skills"><span class="nav-icon">⬡</span> Skills</a>
+      <a href="#" class="nav-item" data-section="messages"><span class="nav-icon">✉</span> Messages</a>
+      <a href="#" class="nav-item" data-section="appearance"><span class="nav-icon">◐</span> Appearance</a>
+      <a href="#" class="nav-item" data-section="settings"><span class="nav-icon">⚙</span> Settings</a>
+    </nav>
+    <div class="sidebar-footer">
+      <a href="../index.html" class="nav-item" target="_blank"><span class="nav-icon">↗</span> View Site</a>
+      <button class="nav-item logout-btn" id="logout-btn"><span class="nav-icon">⏻</span> Logout</button>
+    </div>
+  </aside>
+
+  <div class="admin-main">
+    <header class="admin-topbar">
+      <button class="sidebar-toggle" id="sidebar-toggle" aria-label="Toggle sidebar">☰</button>
+      <div class="topbar-search">
+        <input type="search" placeholder="Search..." class="form-input" id="global-search">
+      </div>
+      <div class="topbar-actions">
+        <button class="theme-toggle" id="theme-toggle" title="Toggle theme">🌓</button>
+        <div class="user-chip">
+          <span class="user-avatar">J</span>
+          <span>Admin</span>
+        </div>
+      </div>
+    </header>
+
+    <div class="admin-content">
+      <!-- OVERVIEW -->
+      <section class="admin-section active" id="section-overview">
+        <h1 class="admin-title">Overview</h1>
+        <div class="stats-grid" id="stats-grid"></div>
+        <div class="dashboard-grid">
+          <div class="admin-card">
+            <h3>Recent Messages</h3>
+            <div id="recent-messages"></div>
+          </div>
+          <div class="admin-card">
+            <h3>Quick Actions</h3>
+            <div class="quick-actions">
+              <button class="btn btn-secondary btn-sm" data-goto="projects">Manage Projects</button>
+              <button class="btn btn-secondary btn-sm" data-goto="profile">Edit Profile</button>
+              <button class="btn btn-secondary btn-sm" data-goto="messages">View Messages</button>
+              <button class="btn btn-secondary btn-sm" data-goto="skills">Edit Skills</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- PROFILE -->
+      <section class="admin-section" id="section-profile">
+        <h1 class="admin-title">Profile Management</h1>
+        <form id="profile-form" class="admin-form">
+          <div class="form-row">
+            <div class="form-group"><label class="form-label">Name</label><input class="form-input" name="name" id="p-name"></div>
+            <div class="form-group"><label class="form-label">Title</label><input class="form-input" name="title" id="p-title"></div>
+          </div>
+          <div class="form-group"><label class="form-label">Hero Headline</label><input class="form-input" name="heroHeadline" id="p-heroHeadline"></div>
+          <div class="form-group"><label class="form-label">Hero Subtitle</label><input class="form-input" name="heroSubtitle" id="p-heroSubtitle"></div>
+          <div class="form-group"><label class="form-label">Intro</label><textarea class="form-textarea" name="intro" id="p-intro"></textarea></div>
+          <div class="form-group"><label class="form-label">Bio</label><textarea class="form-textarea" name="bio" id="p-bio"></textarea></div>
+          <div class="form-group"><label class="form-label">Story</label><textarea class="form-textarea" name="story" id="p-story"></textarea></div>
+          <div class="form-group"><label class="form-label">Journey</label><textarea class="form-textarea" name="journey" id="p-journey"></textarea></div>
+          <div class="form-group"><label class="form-label">Goals</label><textarea class="form-textarea" name="goals" id="p-goals"></textarea></div>
+          <div class="form-group"><label class="form-label">Philosophy</label><textarea class="form-textarea" name="philosophy" id="p-philosophy"></textarea></div>
+          <div class="form-row">
+            <div class="form-group"><label class="form-label">Email</label><input class="form-input" name="email" id="p-email"></div>
+            <div class="form-group"><label class="form-label">Telegram</label><input class="form-input" name="telegram" id="p-telegram"></div>
+          </div>
+          <div class="form-row">
+            <div class="form-group"><label class="form-label">Instagram</label><input class="form-input" name="instagram" id="p-instagram"></div>
+            <div class="form-group"><label class="form-label">GitHub</label><input class="form-input" name="github" id="p-github"></div>
+          </div>
+          <div class="form-group"><label class="form-label">Location</label><input class="form-input" name="location" id="p-location"></div>
+          <div class="form-group">
+            <label class="form-label">Profil rasmi</label>
+            <p class="text-muted" style="font-size:0.85rem;margin-bottom:10px">O'z rasmingizni yuklang (JPG/PNG, tavsiya: 400x500, 800KB gacha). Keyin Save Profile bosing.</p>
+            <input class="form-input" type="text" name="profileImage" id="p-profileImage" placeholder="Yoki rasm URL: https://...">
+            <input type="file" accept="image/jpeg,image/png,image/webp,image/gif" id="p-image-file" class="mt-2" style="margin-top:10px;color:var(--text-secondary)">
+            <img id="p-image-preview" class="image-preview" alt="Preview" style="margin-top:12px;max-width:180px;border-radius:12px;border:1px solid var(--border)">
+          </div>
+          
+          <div class="form-group">
+            <label class="form-label">Resume (PDF / DOC)</label>
+            <p class="text-muted" style="font-size:0.85rem;margin-bottom:10px">Resume faylini yuklang (PDF tavsiya etiladi, max ~1.5MB). Saytda "Resume yuklab olish" chiqadi.</p>
+            <input class="form-input" type="text" id="p-resumeUrl" placeholder="Yoki resume URL: https://...">
+            <input type="file" accept=".pdf,.doc,.docx,application/pdf" id="p-resume-file" class="mt-2" style="margin-top:10px;color:var(--text-secondary)">
+            <input type="hidden" id="p-resumeName" value="">
+            <p id="p-resume-status" class="text-muted" style="font-size:0.85rem;margin-top:8px;"></p>
+          </div>
+
+          <button type="submit" class="btn btn-primary">Save Profile</button>
+        </form>
+      </section>
+
+      <!-- PROJECTS -->
+      <section class="admin-section" id="section-projects">
+        <div class="section-head">
+          <h1 class="admin-title">Projects</h1>
+          <button class="btn btn-primary btn-sm" id="add-project-btn">+ Add Project</button>
+        </div>
+        <div class="admin-table-wrap">
+          <table class="admin-table" id="projects-table">
+            <thead><tr><th>Title</th><th>Category</th><th>Featured</th><th>Actions</th></tr></thead>
+            <tbody></tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- SKILLS -->
+      <section class="admin-section" id="section-skills">
+        <div class="section-head">
+          <h1 class="admin-title">Skills</h1>
+          <button class="btn btn-primary btn-sm" id="add-skill-btn">+ Add Skill</button>
+        </div>
+        <div class="admin-table-wrap">
+          <table class="admin-table" id="skills-table">
+            <thead><tr><th>Name</th><th>Category</th><th>Level</th><th>Actions</th></tr></thead>
+            <tbody></tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- MESSAGES -->
+      <section class="admin-section" id="section-messages">
+        <h1 class="admin-title">Messages</h1>
+        <div id="messages-list" class="messages-list"></div>
+      </section>
+
+      <!-- APPEARANCE -->
+      <section class="admin-section" id="section-appearance">
+        <h1 class="admin-title">Website Appearance</h1>
+        <form id="appearance-form" class="admin-form">
+          <div class="form-group"><label class="form-label">Site Title</label><input class="form-input" id="s-siteTitle"></div>
+          <div class="form-row">
+            <div class="form-group"><label class="form-label">Primary Accent</label><input type="color" class="form-input" id="s-accentPrimary" style="height:48px;padding:4px"></div>
+            <div class="form-group"><label class="form-label">Secondary Accent</label><input type="color" class="form-input" id="s-accentSecondary" style="height:48px;padding:4px"></div>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Theme</label>
+            <select class="form-select" id="s-theme">
+              <option value="dark">Dark</option>
+              <option value="light">Light</option>
+            </select>
+          </div>
+          <button type="submit" class="btn btn-primary">Save Appearance</button>
+        </form>
+      </section>
+
+      <!-- SETTINGS -->
+      <section class="admin-section" id="section-settings">
+        <h1 class="admin-title">Settings</h1>
+        <div class="admin-card">
+          <h3>Data</h3>
+          <p class="text-muted mb-4">Reset all data to defaults (profile, projects, skills, messages).</p>
+          <button class="btn btn-secondary" id="reset-data-btn">Reset to Defaults</button>
+        </div>
+        <div class="admin-card mt-6">
+          <h3>About this demo</h3>
+          <p class="text-muted">This is a frontend-only CMS using localStorage. Authentication is session-based and not secure for production. Deploy with a real backend for real use.</p>
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <!-- Project Modal -->
+  <div class="modal-overlay" id="project-edit-modal">
+    <div class="modal" style="max-width:640px">
+      <div class="modal-header"><h3 id="pe-title">Edit Project</h3><button class="modal-close" id="pe-close">✕</button></div>
+      <div class="modal-body">
+        <form id="project-edit-form">
+          <input type="hidden" id="pe-id">
+          <div class="form-group"><label class="form-label">Title</label><input class="form-input" id="pe-name" required></div>
+          <div class="form-group"><label class="form-label">Description</label><textarea class="form-textarea" id="pe-desc" required></textarea></div>
+          <div class="form-group"><label class="form-label">Details</label><textarea class="form-textarea" id="pe-details"></textarea></div>
+          <div class="form-row">
+            <div class="form-group"><label class="form-label">Category</label><input class="form-input" id="pe-cat"></div>
+            <div class="form-group"><label class="form-label">Order</label><input class="form-input" type="number" id="pe-order"></div>
+          </div>
+          <div class="form-group"><label class="form-label">Technologies (comma separated)</label><input class="form-input" id="pe-tech"></div>
+          <div class="form-group"><label class="form-label">Live URL</label><input class="form-input" id="pe-live" type="url"></div>
+          <div class="form-group"><label class="form-label">GitHub URL</label><input class="form-input" id="pe-github" type="url"></div>
+          <div class="form-group"><label class="form-label">Image URL</label><input class="form-input" id="pe-image"></div>
+          <div class="form-group"><label><input type="checkbox" id="pe-featured"> Featured</label></div>
+          <button type="submit" class="btn btn-primary">Save Project</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Skill Modal -->
+  <div class="modal-overlay" id="skill-edit-modal">
+    <div class="modal" style="max-width:480px">
+      <div class="modal-header"><h3 id="se-title">Edit Skill</h3><button class="modal-close" id="se-close">✕</button></div>
+      <div class="modal-body">
+        <form id="skill-edit-form">
+          <input type="hidden" id="se-id">
+          <div class="form-group"><label class="form-label">Name</label><input class="form-input" id="se-name" required></div>
+          <div class="form-group"><label class="form-label">Category</label><input class="form-input" id="se-cat"></div>
+          <div class="form-group"><label class="form-label">Level (0-100)</label><input class="form-input" type="number" min="0" max="100" id="se-level" required></div>
+          <div class="form-group"><label class="form-label">Description</label><textarea class="form-textarea" id="se-desc"></textarea></div>
+          <button type="submit" class="btn btn-primary">Save Skill</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <script src="../js/storage.js"></script>
+  <script src="../js/auth.js"></script>
+  <script src="../js/dashboard.js"></script>
+</body>
+</html>

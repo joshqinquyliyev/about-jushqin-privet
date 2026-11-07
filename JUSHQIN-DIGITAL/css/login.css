@@ -1,0 +1,123 @@
+.login-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg-primary);
+  padding: 24px;
+}
+
+.login-page::before {
+  content: '';
+  position: fixed;
+  width: 500px;
+  height: 500px;
+  background: var(--accent-primary);
+  border-radius: 50%;
+  filter: blur(120px);
+  opacity: 0.25;
+  top: -10%;
+  right: -10%;
+  pointer-events: none;
+}
+
+.login-wrap {
+  width: 100%;
+  max-width: 420px;
+  position: relative;
+  z-index: 1;
+}
+
+.login-card {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-xl);
+  padding: 40px;
+  box-shadow: var(--shadow-lg);
+}
+
+.login-logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.15rem;
+  margin-bottom: 28px;
+}
+
+.login-card h1 {
+  font-size: 1.75rem;
+  margin-bottom: 8px;
+}
+
+.login-card > .text-muted {
+  margin-bottom: 28px;
+  font-size: 0.9rem;
+}
+
+.password-wrap {
+  position: relative;
+}
+
+.password-wrap .form-input {
+  padding-right: 48px;
+}
+
+.toggle-pass {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  font-size: 1rem;
+  padding: 4px;
+}
+
+.remember-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+}
+
+.login-error {
+  color: var(--error);
+  font-size: 0.9rem;
+  margin-top: 16px;
+  text-align: center;
+}
+
+.login-note {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  margin-top: 24px;
+  line-height: 1.5;
+}
+
+.back-link {
+  display: inline-block;
+  margin-top: 20px;
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+}
+
+.back-link:hover {
+  color: var(--accent-secondary);
+}
+
+
+.login-card {
+  border-color: rgba(0,255,157,0.25) !important;
+  box-shadow: 0 0 40px rgba(0,255,157,0.12), 0 16px 48px rgba(0,0,0,0.5) !important;
+}
+.login-page::before {
+  background: #00ff9d !important;
+  opacity: 0.12 !important;
+}
+.logo-mark {
+  box-shadow: 0 0 25px rgba(0,255,157,0.5) !important;
+}

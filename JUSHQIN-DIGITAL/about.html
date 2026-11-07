@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About — JUSHQIN DIGITAL</title>
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/about.css">
+  <link rel="stylesheet" href="css/home.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+  <div class="scroll-progress"></div>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo"><span class="logo-mark">J</span><span>JUSHQIN</span></a>
+      <nav class="nav-links" aria-label="Main">
+        <a href="index.html" data-i18n="nav_home">Bosh sahifa</a>
+        <a href="about.html" class="active" data-i18n="nav_about">Men haqimda</a>
+        <a href="projects.html" data-i18n="nav_projects">Loyihalar</a>
+<a href="contact.html" data-i18n="nav_contact">Aloqa</a>
+      </nav>
+            <div class="header-controls">
+        <div class="lang-switch">
+          <button type="button" class="lang-btn" data-lang="uz">UZ</button>
+          <button type="button" class="lang-btn" data-lang="en">EN</button>
+          <button type="button" class="lang-btn" data-lang="ru">RU</button>
+        </div>
+        <button type="button" class="theme-btn" title="Theme">◐</button>
+        <a href="admin/login.html" class="admin-link-top">Boshqaruv</a>
+      </div>
+      <button class="nav-toggle" aria-label="Menu"><svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+    </div>
+  </header>
+
+  <main>
+    <section class="about-hero section">
+      <div class="container">
+        <div class="about-hero-grid">
+          <div class="about-hero-text reveal">
+            <span class="section-label" data-i18n="about_page_label">Men haqimda</span>
+            <h1 class="display-lg" data-i18n="about_page_title">Mening hikoyam</h1>
+            <p class="text-lg text-muted mt-4" data-profile="intro"></p>
+          </div>
+          <div class="about-hero-image reveal">
+            <img data-profile="image" alt="JUSHQIN">
+          </div>
+        </div>
+
+        <div id="resume" class="resume-download-wrap reveal" style="margin: 32px 0 48px;">
+          <a href="#" id="resume-download-btn" class="btn btn-primary" data-i18n="resume_download" download>
+            Resume yuklab olish
+          </a>
+          <p id="resume-missing" class="text-muted" style="display:none;margin-top:12px;font-size:0.9rem;" data-i18n="resume_missing"></p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section about-editorial">
+      <div class="container">
+        <article class="editorial-block reveal">
+          <h2 class="display-md" data-i18n="journey">Yo'lim</h2>
+          <p class="text-lg text-muted" data-profile="journey"></p>
+        </article>
+        <article class="editorial-block reveal">
+          <h2 class="display-md">Mening hikoyam</h2>
+          <p class="text-lg text-muted" data-profile="story"></p>
+        </article>
+        <div class="editorial-split">
+          <article class="editorial-block reveal">
+            <h2 class="heading-lg" data-i18n="goals">Maqsadlar</h2>
+            <p class="text-muted" data-profile="goals"></p>
+          </article>
+          <article class="editorial-block reveal">
+            <h2 class="heading-lg" data-i18n="philosophy">Falsafa</h2>
+            <p class="text-muted" data-profile="philosophy"></p>
+          </article>
+        </div>
+        <article class="editorial-block reveal">
+          <h2 class="heading-lg" data-i18n="interests">Qiziqishlar</h2>
+          <div class="interests-list" id="interests-list"></div>
+        </article>
+        
+        <article class="editorial-block reveal">
+          <h2 class="heading-lg" data-i18n="skills_title">Ko'nikmalar</h2>
+          <p class="text-muted mb-6"><span data-i18n="skills_sub">HTML, CSS, JavaScript, Responsive Design, Git va GitHub — frontend ishlarim asosi.</span></p>
+          <div class="skills-overview-grid" id="about-skills"></div>
+          <p class="text-muted mt-6" style="font-size:0.85rem"><span data-i18n="skills_note">Ko'nikmalar darajasi Admin panel orqali o'zgartiriladi.</span></p>
+        </article>
+
+        <article class="editorial-block reveal">
+          <h2 class="heading-lg" data-i18n="timeline">Vaqt chizig'i</h2>
+          <div class="timeline">
+            <div class="timeline-item"><span class="tl-year">2023</span><div><strong data-i18n-tl="tl_2023_t">Frontend yo'li boshlandi</strong><p class="text-muted" data-i18n-tl="tl_2023_d">HTML, CSS asoslari bilan boshlandi.</p></div></div>
+            <div class="timeline-item"><span class="tl-year">2024</span><div><strong data-i18n-tl="tl_2024_t">Birinchi real loyihalar</strong><p class="text-muted" data-i18n-tl="tl_2024_d">Birinchi to'liq veb-saytlar va interaktiv loyihalar.</p></div></div>
+            <div class="timeline-item"><span class="tl-year">2025</span><div><strong data-i18n-tl="tl_2025_t">Portfolio kengayishi</strong><p class="text-muted" data-i18n-tl="tl_2025_d">6 ta real loyiha, premium dizayn yondashuvi.</p></div></div>
+            <div class="timeline-item"><span class="tl-year">2026</span><div><strong data-i18n-tl="tl_2026_t">JUSHQIN DIGITAL</strong><p class="text-muted" data-i18n-tl="tl_2026_d">Shaxsiy brend va professional platforma.</p></div></div>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand"><div class="logo"><span class="logo-mark">J</span><span>JUSHQIN</span></div><p>Building digital experiences with code, design and intention.</p></div>
+        <div class="footer-col"><h4 data-i18n="footer_nav">Navigatsiya</h4><a href="index.html">Bosh sahifa</a><a href="about.html">Men haqimda</a><a href="projects.html">Loyihalar</a>
+<a href="contact.html">Aloqa</a></div>
+        <div class="footer-col"><h4 data-i18n="footer_connect">Aloqa</h4><div class="footer-socials"></div></div>
+        <div class="footer-col"><h4 data-i18n="footer_admin">Boshqaruv</h4><a href="admin/login.html" data-i18n="admin_login">Admin kirish</a></div>
+      </div>
+      <div class="footer-bottom"><span>© 2026 JUSHQIN DIGITAL</span><span><span data-i18n="footer_copy">Frontend demo • localStorage</span></span></div>
+    </div>
+  </footer>
+
+  <script src="js/storage.js"></script>
+  <script src="js/i18n.js"></script>
+  <script src="js/main.js"></script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const profile = getProfile();
+      const list = document.getElementById('interests-list');
+      if (list && profile.interests) {
+        list.innerHTML = profile.interests.map(i => `<span class="interest-tag">${i}</span>`).join('');
+      }
+      const skillsEl = document.getElementById('about-skills');
+      if (skillsEl) {
+        const skills = getSkills();
+        skillsEl.innerHTML = skills.map(s => `
+          <div class="skill-chip reveal">
+            <span class="skill-name">${s.name}</span>
+            <span class="skill-level">${s.level}%</span>
+          </div>
+        `).join('');
+        if (typeof initReveal === 'function') initReveal();
+      }
+    });
+  </script>
+
+
+  
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const btn = document.getElementById('resume-download-btn');
+      const miss = document.getElementById('resume-missing');
+      if (!btn) return;
+
+      function buildFullResumeText() {
+        const p = getProfile();
+        const skills = (typeof getSkills === 'function' ? getSkills() : []);
+        const projects = (typeof getProjects === 'function' ? getProjects() : []);
+        const lines = [];
+        lines.push('═══════════════════════════════════════');
+        lines.push('              RESUME / CV');
+        lines.push('═══════════════════════════════════════');
+        lines.push('');
+        lines.push((p.name || 'Quyliyev Jushqin').toUpperCase());
+        lines.push(p.title || 'Frontend Developer');
+        lines.push('');
+        lines.push('───────────────────────────────────────');
+        lines.push('ALOQA / CONTACT');
+        lines.push('───────────────────────────────────────');
+        if (p.email) lines.push('Email:     ' + p.email);
+        if (p.telegram) lines.push('Telegram:  https://t.me/' + String(p.telegram).replace('@',''));
+        if (p.instagram) lines.push('Instagram: https://instagram.com/' + String(p.instagram).replace('@',''));
+        if (p.github) lines.push('GitHub:    ' + p.github);
+        if (p.location) lines.push('Manzil:    ' + p.location);
+        lines.push('');
+        lines.push('───────────────────────────────────────');
+        lines.push('KIRISH / INTRO');
+        lines.push('───────────────────────────────────────');
+        lines.push(p.intro || '');
+        lines.push('');
+        lines.push('───────────────────────────────────────');
+        lines.push('BIO');
+        lines.push('───────────────────────────────────────');
+        lines.push(p.bio || '');
+        lines.push('');
+        if (p.story) {
+          lines.push('───────────────────────────────────────');
+          lines.push('HIKOYA / STORY');
+          lines.push('───────────────────────────────────────');
+          lines.push(p.story);
+          lines.push('');
+        }
+        if (p.journey) {
+          lines.push('───────────────────────────────────────');
+          lines.push("YO'L / JOURNEY");
+          lines.push('───────────────────────────────────────');
+          lines.push(p.journey);
+          lines.push('');
+        }
+        if (p.goals) {
+          lines.push('───────────────────────────────────────');
+          lines.push('MAQSADLAR / GOALS');
+          lines.push('───────────────────────────────────────');
+          lines.push(p.goals);
+          lines.push('');
+        }
+        if (p.philosophy) {
+          lines.push('───────────────────────────────────────');
+          lines.push('FALSAFA / PHILOSOPHY');
+          lines.push('───────────────────────────────────────');
+          lines.push(p.philosophy);
+          lines.push('');
+        }
+        if (p.interests && p.interests.length) {
+          lines.push('───────────────────────────────────────');
+          lines.push('QIZIQISHLAR / INTERESTS');
+          lines.push('───────────────────────────────────────');
+          lines.push(p.interests.join(', '));
+          lines.push('');
+        }
+        if (skills.length) {
+          lines.push('───────────────────────────────────────');
+          lines.push("KO'NIKMALAR / SKILLS");
+          lines.push('───────────────────────────────────────');
+          skills.forEach(s => {
+            lines.push('• ' + s.name + (s.level != null ? ' — ' + s.level + '%' : '') + (s.description ? '  |  ' + s.description : ''));
+          });
+          lines.push('');
+        }
+        if (projects.length) {
+          lines.push('───────────────────────────────────────');
+          lines.push('LOYIHALAR / PROJECTS');
+          lines.push('───────────────────────────────────────');
+          projects.forEach((pr, i) => {
+            lines.push((i + 1) + '. ' + pr.title + (pr.category ? ' (' + pr.category + ')' : ''));
+            if (pr.description) lines.push('   ' + pr.description);
+            if (pr.technologies && pr.technologies.length) lines.push('   Tech: ' + pr.technologies.join(', '));
+            if (pr.liveUrl) lines.push('   URL:  ' + pr.liveUrl);
+            lines.push('');
+          });
+        }
+        lines.push('═══════════════════════════════════════');
+        lines.push('JUSHQIN DIGITAL  •  ' + new Date().toLocaleDateString());
+        lines.push('═══════════════════════════════════════');
+        return lines.join('
+');
+      }
+
+      function downloadResume() {
+        const p = getProfile();
+        // Agar admin PDF yuklagan bo'lsa — o'sha fayl
+        if (p.resumeUrl && (p.resumeUrl.startsWith('data:') || p.resumeUrl.startsWith('http'))) {
+          if (p.resumeUrl.startsWith('http')) {
+            window.open(p.resumeUrl, '_blank');
+            return;
+          }
+          const a = document.createElement('a');
+          a.href = p.resumeUrl;
+          a.download = p.resumeName || 'Quyliyev_Jushqin_Resume.pdf';
+          a.click();
+          return;
+        }
+        // Rasm siz — barcha matn ma'lumotlar
+        const text = buildFullResumeText();
+        const blob = new Blob([text], { type: 'text/plain;charset=utf-8' });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = 'Quyliyev_Jushqin_Resume.txt';
+        document.body.appendChild(a);
+        a.click();
+        a.remove();
+        URL.revokeObjectURL(url);
+      }
+
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        downloadResume();
+      });
+      btn.removeAttribute('href');
+      btn.style.cursor = 'pointer';
+    });
+  </script>
+
+
+</body>
+</html>
